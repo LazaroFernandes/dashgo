@@ -1,4 +1,5 @@
 import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Th, Thead, Tr, Text, useBreakpointValue } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -17,15 +18,17 @@ export default function UserList() {
                 <Box flex="1" borderRadius={8} bg="gray.800" p="8">
                     <Flex mb="8" justify="space-between" alignItems="center">
                         <Heading size="lg" fontWeight="normal">Usuários</Heading>
-                        <Button
-                            as="a"
-                            size="sm"
-                            fontSize="sm"
-                            colorScheme="pink"
-                            leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-                        >
-                            Criar novo
-                        </Button>
+                        <Link href="/users/create" passHref>
+                            <Button
+                                as="a"
+                                size="sm"
+                                fontSize="sm"
+                                colorScheme="pink"
+                                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+                            >
+                                Criar novo
+                            </Button>
+                        </Link>
                     </Flex>
                     <Table colorScheme="whiteAlpha">
                         <Thead>
@@ -50,17 +53,6 @@ export default function UserList() {
                                     </Box>
                                 </Td>
                                 {isWideVersion && <Td>01 Abril, 2022</Td>}
-                                <Td>
-                                    <Button
-                                        as="a"
-                                        size="sm"
-                                        fontSize="sm"
-                                        colorScheme="purple"
-                                        leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
                             </Tr>
                             <Tr>
                                 <Td px={["4", "4", "6"]}>
@@ -73,17 +65,6 @@ export default function UserList() {
                                     </Box>
                                 </Td>
                                 {isWideVersion && <Td> 01 Abril, 2022 </Td>}
-                                <Td>
-                                    <Button
-                                        as="a"
-                                        size="sm"
-                                        fontSize="sm"
-                                        colorScheme="purple"
-                                        leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
                             </Tr>
                             <Tr>
                                 <Td px={["4", "4", "6"]}>
@@ -96,17 +77,6 @@ export default function UserList() {
                                     </Box>
                                 </Td>
                                 {isWideVersion && <Td> 01 Abril, 2022 </Td>}
-                                <Td>
-                                    <Button
-                                        as="a"
-                                        size="sm"
-                                        fontSize="sm"
-                                        colorScheme="purple"
-                                        leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
                             </Tr>
                         </Tbody>
                     </Table>
